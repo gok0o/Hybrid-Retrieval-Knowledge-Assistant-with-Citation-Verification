@@ -1,0 +1,147 @@
+[
+  {
+    "id": "Q001",
+    "question": "How do I authenticate with the FlowDesk API?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      "API-001"
+    ]
+  },
+  {
+    "id": "Q002",
+    "question": "Why am I getting HTTP 401 from the API?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      "TRB-001",
+      "API-008"
+    ]
+  },
+  {
+    "id": "Q003",
+    "question": "What is the difference between a 401 and a 403?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      "API-008",
+      "TRB-002"
+    ]
+  },
+  {
+    "id": "Q004",
+    "question": "What should I do after receiving a 429?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      "TRB-003",
+      "API-006",
+      "REL-001"
+    ]
+  },
+  {
+    "id": "Q005",
+    "question": "Are scoped API tokens supported in the current version?",
+    "type": "release_trap",
+    "answerable": true,
+    "expected_sources": [
+      "API-002",
+      "REL-001"
+    ]
+  },
+  {
+    "id": "Q006",
+    "question": "Does API v2 use cursor pagination?",
+    "type": "outdated_trap",
+    "answerable": false,
+    "expected_sources": [
+      "REL-004",
+      "API-007"
+    ]
+  },
+  {
+    "id": "Q007",
+    "question": "Can an Agent change workspace settings?",
+    "type": "policy",
+    "answerable": true,
+    "expected_sources": [
+      "FAQ-003",
+      "POL-003"
+    ]
+  },
+  {
+    "id": "Q008",
+    "question": "Can security alerts be disabled?",
+    "type": "policy",
+    "answerable": true,
+    "expected_sources": [
+      "FAQ-005",
+      "POL-004"
+    ]
+  },
+  {
+    "id": "Q009",
+    "question": "What happens if a webhook endpoint is unavailable?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      "TRB-004",
+      "API-005"
+    ]
+  },
+  {
+    "id": "Q010",
+    "question": "How do I set up my first API request?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      "ONB-004",
+      "API-001"
+    ]
+  },
+  {
+    "id": "Q011",
+    "question": "Can I share my API token with another developer?",
+    "type": "policy",
+    "answerable": true,
+    "expected_sources": [
+      "POL-001",
+      "ONB-006"
+    ]
+  },
+  {
+    "id": "Q012",
+    "question": "What is FlowDesk's maximum API rate limit per second?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": "Q013",
+    "question": "How do I invite a new user?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      "ONB-002"
+    ]
+  },
+  {
+    "id": "Q014",
+    "question": "What roles does FlowDesk provide?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      "FAQ-003"
+    ]
+  },
+  {
+    "id": "Q015",
+    "question": "Can a Viewer download every field in an export?",
+    "type": "multi_doc",
+    "answerable": false,
+    "expected_sources": [
+      "FAQ-007",
+      "TRB-010"
+    ]
+  }
+]

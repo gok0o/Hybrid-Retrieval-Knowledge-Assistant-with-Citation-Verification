@@ -1,0 +1,27 @@
+{
+  "input": {
+    "question": "string",
+    "access_level": "public | customer | internal | admin"
+  },
+  "output": {
+    "answer": "string",
+    "citations": [
+      {
+        "chunk_id": "string",
+        "source": "string",
+        "section": "string",
+        "claim": "string",
+        "verified": "boolean"
+      }
+    ],
+    "confidence": "float 0..1",
+    "confidence_breakdown": {
+      "retrieval": "float 0..1",
+      "citation_support": "float 0..1",
+      "answer_completeness": "float 0..1"
+    },
+    "unverified": [
+      "string"
+    ]
+  }
+}

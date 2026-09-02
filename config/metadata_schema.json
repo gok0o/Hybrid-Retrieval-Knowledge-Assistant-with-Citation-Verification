@@ -1,0 +1,20 @@
+{
+  "document_metadata": {
+    "document_id": "string, globally unique",
+    "source_name": "string",
+    "section_heading": "string",
+    "last_updated": "ISO date YYYY-MM-DD",
+    "document_type": "faq | troubleshooting | onboarding | api | release_notes | policies",
+    "access_level": "public | customer | internal | admin",
+    "product": "string",
+    "version": "string"
+  },
+  "chunk_metadata": {
+    "chunk_id": "globally unique",
+    "document_id": "parent document ID",
+    "chunk_index": "integer",
+    "chunking_strategy": "heading_recursive | fixed_overlap",
+    "page_number": "integer or null",
+    "text_hash": "SHA-256 of normalized chunk text"
+  }
+}
