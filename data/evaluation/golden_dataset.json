@@ -1,0 +1,388 @@
+[
+  {
+    "id": "Q001",
+    "question": "How do I authenticate an API request?",
+    "relevant_chunks": [
+      "API-001"
+    ],
+    "expected_answer": "API requests require an Authorization header containing a valid API token."
+  },
+  {
+    "id": "Q002",
+    "question": "What does an HTTP 401 error indicate?",
+    "relevant_chunks": [
+      "API-008",
+      "TRB-001"
+    ],
+    "expected_answer": "An HTTP 401 error indicates an authentication failure, commonly caused by a missing, expired, or invalid credential."
+  },
+  {
+    "id": "Q003",
+    "question": "What is the difference between HTTP 401 and 403 errors?",
+    "relevant_chunks": [
+      "API-008",
+      "TRB-002"
+    ],
+    "expected_answer": "A 401 error indicates an authentication failure, while a 403 error indicates that the request is authenticated but does not have permission to access the requested resource."
+  },
+  {
+    "id": "Q004",
+    "question": "What does an HTTP 429 error mean?",
+    "relevant_chunks": [
+      "TRB-003",
+      "API-006",
+      "REL-001"
+    ],
+    "expected_answer": "An HTTP 429 error indicates that the API rate limit has been exceeded."
+  },
+  {
+    "id": "Q005",
+    "question": "How do scoped API tokens work?",
+    "relevant_chunks": [
+      "API-002",
+      "REL-001"
+    ],
+    "expected_answer": "Scoped API tokens restrict access by allowing specific permissions or scopes instead of granting unrestricted access."
+  },
+  {
+    "id": "Q006",
+    "question": "How does pagination work in API v2?",
+    "relevant_chunks": [
+      "REL-004",
+      "API-007"
+    ],
+    "expected_answer": "API v2 uses cursor-based pagination rather than the older page-number pagination approach."
+  },
+  {
+    "id": "Q007",
+    "question": "What is FlowDesk?",
+    "relevant_chunks": [
+      "FAQ-001"
+    ],
+    "expected_answer": "FlowDesk is a customer-support workflow platform used to manage tickets, teams, automations, and customer conversations"
+  },
+  {
+    "id": "Q008",
+    "question": "Can users disable security alerts?",
+    "relevant_chunks": [
+      "FAQ-005",
+      "POL-004"
+    ],
+    "expected_answer": "Security alerts are configurable according to the workspace security settings and applicable policy."
+  },
+  {
+    "id": "Q009",
+    "question": "What should I do if a webhook endpoint is unavailable?",
+    "relevant_chunks": [
+      "TRB-004",
+      "API-005"
+    ],
+    "expected_answer": "Check the webhook endpoint configuration and troubleshoot the failed delivery using the documented webhook troubleshooting steps."
+  },
+  {
+    "id": "Q010",
+    "question": "What should I do before making my first API request?",
+    "relevant_chunks": [
+      "ONB-004",
+      "API-001"
+    ],
+    "expected_answer": "Before making the first API request, obtain the required API credentials and authenticate the request correctly."
+  },
+  {
+    "id": "Q011",
+    "question": "Can I share my API token with another user?",
+    "relevant_chunks": [
+      "POL-001",
+      "ONB-006"
+    ],
+    "expected_answer": "API tokens should not be shared with other users; users should use their own appropriate credentials."
+  },
+  {
+    "id": "Q012",
+    "question": "What is the maximum number of API requests a workspace can make per second?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q013",
+    "question": "How can I invite a user to the workspace?",
+    "relevant_chunks": [
+      "ONB-002"
+    ],
+    "expected_answer": "Users can be invited to the workspace through the documented workspace invitation process."
+  },
+  {
+    "id": "Q014",
+    "question": "What roles are available in the workspace?",
+    "relevant_chunks": [
+      "FAQ-003"
+    ],
+    "expected_answer": "The workspace provides different roles with different levels of permissions, including the documented Agent and other workspace roles."
+  },
+  {
+    "id": "Q015",
+    "question": "Can a Viewer download every field from an export?",
+    "relevant_chunks": [
+      "FAQ-007",
+      "TRB-010"
+    ],
+    "expected_answer": "Viewer access does not necessarily provide access to every export field; export availability depends on the documented permissions and restrictions."
+  },
+  {
+    "id": "Q016",
+    "question": "Which header should I use to authenticate an API request?",
+    "relevant_chunks": [
+      "API-001"
+    ],
+    "expected_answer": "Use the Authorization header with a valid API token to authenticate the API request."
+  },
+  {
+    "id": "Q017",
+    "question": "What are common causes of an HTTP 401 error?",
+    "relevant_chunks": [
+      "TRB-001"
+    ],
+    "expected_answer": "Common causes include a missing Authorization header, an expired token, or an invalid token."
+  },
+  {
+    "id": "Q018",
+    "question": "What are common causes of an HTTP 403 error?",
+    "relevant_chunks": [
+      "TRB-002"
+    ],
+    "expected_answer": "A 403 error occurs when the request is authenticated but the user or token does not have sufficient permission to access the resource."
+  },
+  {
+    "id": "Q019",
+    "question": "What does HTTP 429 mean for API requests?",
+    "relevant_chunks": [
+      "TRB-003"
+    ],
+    "expected_answer": "HTTP 429 means the API rate limit has been exceeded."
+  },
+  {
+    "id": "Q020",
+    "question": "How does API rate limiting work?",
+    "relevant_chunks": [
+      "API-006",
+      "TRB-003"
+    ],
+    "expected_answer": "API rate limiting restricts the number or frequency of requests allowed within a specified period."
+  },
+  {
+    "id": "Q021",
+    "question": "What permissions can be assigned to a scoped API token?",
+    "relevant_chunks": [
+      "API-002"
+    ],
+    "expected_answer": "A scoped API token can be restricted to specific permissions or scopes defined by the API."
+  },
+  {
+    "id": "Q022",
+    "question": "Are unscoped API tokens still supported?",
+    "relevant_chunks": [
+      "REL-001"
+    ],
+    "expected_answer": "The release documentation describes the current status of unscoped API tokens and the changes related to scoped tokens."
+  },
+  {
+    "id": "Q023",
+    "question": "How does pagination work for the current list API endpoint?",
+    "relevant_chunks": [
+      "API-007"
+    ],
+    "expected_answer": "The current list API endpoint uses the documented pagination mechanism for retrieving results across multiple pages."
+  },
+  {
+    "id": "Q024",
+    "question": "What pagination method does API v2 use?",
+    "relevant_chunks": [
+      "REL-004"
+    ],
+    "expected_answer": "API v2 uses cursor-based pagination."
+  },
+  {
+    "id": "Q025",
+    "question": "What is the current API version?",
+    "relevant_chunks": [
+      "API-010"
+    ],
+    "expected_answer": "The documentation identifies the current API version and its corresponding integration guidance."
+  },
+  {
+    "id": "Q026",
+    "question": "How quickly are webhook events delivered?",
+    "relevant_chunks": [
+      "FAQ-006"
+    ],
+    "expected_answer": "Webhook delivery timing is described in the webhook documentation, but delivery should be understood according to the documented timing expectations rather than as an absolute guarantee."
+  },
+  {
+    "id": "Q027",
+    "question": "How can I troubleshoot a failed webhook?",
+    "relevant_chunks": [
+      "TRB-004",
+      "API-005"
+    ],
+    "expected_answer": "Check the webhook endpoint and delivery configuration, then follow the documented troubleshooting steps for failed webhook deliveries."
+  },
+  {
+    "id": "Q028",
+    "question": "Is there a guaranteed delivery time for webhooks?",
+    "relevant_chunks": [
+      "FAQ-006"
+    ],
+    "expected_answer": "The documentation describes webhook delivery timing but does not necessarily provide an absolute delivery-time guarantee."
+  },
+  {
+    "id": "Q029",
+    "question": "What should I do if API search is slow?",
+    "relevant_chunks": [
+      "TRB-009"
+    ],
+    "expected_answer": "Follow the documented troubleshooting guidance for slow search performance."
+  },
+  {
+    "id": "Q030",
+    "question": "Can I search for tickets by ID?",
+    "relevant_chunks": [
+      "FAQ-004"
+    ],
+    "expected_answer": "The documentation describes how tickets can be searched using their identifiers."
+  },
+  {
+    "id": "Q031",
+    "question": "Who can invite users to the workspace?",
+    "relevant_chunks": [
+      "ONB-002"
+    ],
+    "expected_answer": "The ability to invite users depends on the workspace role and permissions described in the onboarding documentation."
+  },
+  {
+    "id": "Q032",
+    "question": "What happens if a workspace invitation expires?",
+    "relevant_chunks": [
+      "ONB-002"
+    ],
+    "expected_answer": "An expired workspace invitation must be handled according to the documented invitation process."
+  },
+  {
+    "id": "Q033",
+    "question": "What workspace roles are available?",
+    "relevant_chunks": [
+      "FAQ-003"
+    ],
+    "expected_answer": "The workspace provides multiple roles with different permissions."
+  },
+  {
+    "id": "Q034",
+    "question": "What permissions does the Agent role have?",
+    "relevant_chunks": [
+      "FAQ-003",
+      "POL-003"
+    ],
+    "expected_answer": "The Agent role has the permissions described for that role in the workspace role and permissions documentation."
+  },
+  {
+    "id": "Q035",
+    "question": "What should I do if an API token is exposed?",
+    "relevant_chunks": [
+      "API-001",
+      "POL-001"
+    ],
+    "expected_answer": "An exposed API token should be handled according to the documented API credential security procedures."
+  },
+  {
+    "id": "Q036",
+    "question": "Are security alerts optional?",
+    "relevant_chunks": [
+      "FAQ-005",
+      "POL-004"
+    ],
+    "expected_answer": "The documentation describes whether security alerts can be configured or disabled according to the applicable workspace settings and policy."
+  },
+  {
+    "id": "Q037",
+    "question": "Should I use the API v2 documentation for a current integration?",
+    "relevant_chunks": [
+      "REL-004",
+      "API-010"
+    ],
+    "expected_answer": "The API v2 release and current API documentation provide the relevant guidance for integrations using API v2."
+  },
+  {
+    "id": "Q038",
+    "question": "What authentication changes were introduced in Release 3.2?",
+    "relevant_chunks": [
+      "REL-001"
+    ],
+    "expected_answer": "Release 3.2 introduced the documented authentication changes, including changes related to API token handling."
+  },
+  {
+    "id": "Q039",
+    "question": "Why would an authenticated API request return HTTP 403?",
+    "relevant_chunks": [
+      "TRB-002",
+      "API-002"
+    ],
+    "expected_answer": "A 403 response indicates that the request is authenticated but the credentials do not have the required permission to access the requested resource."
+  },
+  {
+    "id": "Q040",
+    "question": "How can I verify whether my token has the required permissions after receiving a 403?",
+    "relevant_chunks": [
+      "TRB-002",
+      "API-002"
+    ],
+    "expected_answer": "Check the permissions or scopes assigned to the token and verify that they allow access to the requested resource."
+  },
+  {
+    "id": "Q041",
+    "question": "Who is the President of India?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q042",
+    "question": "What is the capital of India?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q043",
+    "question": "Who won the 2022 FIFA World Cup?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q044",
+    "question": "What is the current population of India?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q045",
+    "question": "How do Python list comprehensions work?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q046",
+    "question": "What is the latest version of Python?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q047",
+    "question": "What is a Docker container?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q048",
+    "question": "What is the weather in Kerala today?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q049",
+    "question": "Who is the CEO of Google?",
+    "relevant_chunks": []
+  },
+  {
+    "id": "Q050",
+    "question": "What is the difference between machine learning and deep learning?",
+    "relevant_chunks": []
+  }
+]

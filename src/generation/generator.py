@@ -1,7 +1,7 @@
 import os
-
+import json
 from dotenv import load_dotenv
-from google import genai
+from openai import OpenAI
 
 from .prompt import build_prompt
 
@@ -12,20 +12,21 @@ class AnswerGenerator:
 
         load_dotenv()
 
-        api_key = os.getenv("GEMINI_API_KEY")
+        api_key = os.getenv("OPENROUTER_API_KEY")
 
         self.model = os.getenv(
-            "GEMINI_MODEL",
-            "gemini-3.6-flash",
+            "OPENROUTER_MODEL",
+            "openai/gpt-4o-mini",
         )
 
         if not api_key:
             raise ValueError(
-                "GEMINI_API_KEY is not set."
+                "OPENROUTER_API_KEY is not set."
             )
 
-        self.client = genai.Client(
-            api_key=api_key
+        self.client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=api_key,
         )
 
         print(f"LLM model: {self.model}")
@@ -41,9 +42,11 @@ class AnswerGenerator:
             chunks=chunks,
         )
 
-        response = self.client.models.generate_content(
+        response = self.client.chat.completions.create(
             model=self.model,
-            contents=prompt,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
         )
 
-        return response.text
+        return response.choices[0].message.content

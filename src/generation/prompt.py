@@ -11,7 +11,7 @@ Rules:
 3. Every factual claim must include a citation using the
    exact chunk_id provided in the context.
 4. If the documentation does not contain enough information
-   to answer the question, clearly say so.
+   to answer the question, you must reply exactly with the phrase: 'NO_ANSWER_FOUND'.
 5. Separate verified information from information that could
    not be verified.
 6. Keep the answer concise and useful.
@@ -25,7 +25,6 @@ def build_prompt(question: str, chunks: list[dict]) -> str:
         context_parts.append(
             f"""
 [CHUNK_ID: {chunk["chunk_id"]}]
-Document: {chunk["document_id"]}
 Section: {chunk["metadata"].get("section_heading")}
 
 {chunk["text"]}
@@ -51,13 +50,12 @@ in this format:
 
 [chunk_id]
 
-If a claim cannot be verified from the documentation,
-do not make the claim.
+If the documentation does not contain enough information to answer the question, you must reply exactly with the phrase: 'NO_ANSWER_FOUND'. Do not write anything else.
 
-At the end, include:
+If there is information needed to answer the question that was not available in the documentation, include a section at the end:
 
 WHAT I COULD NOT VERIFY:
-- List information needed to answer the question that was
-  not available in the documentation.
-- If nothing is missing, write "Nothing."
+- List the missing information.
+
+If no information is missing, do not include this section.
 """

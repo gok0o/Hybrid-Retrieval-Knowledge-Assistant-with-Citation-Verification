@@ -1,7 +1,7 @@
 import os
 import json
 from dotenv import load_dotenv
-from google import genai
+from openai import OpenAI
 from pydantic import BaseModel
 
 class Citation(BaseModel):
@@ -18,11 +18,14 @@ class CitationVerificationResult(BaseModel):
 class CitationVerifier:
     def __init__(self):
         load_dotenv()
-        api_key = os.getenv("GEMINI_API_KEY")
-        self.model = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+        api_key = os.getenv("OPENROUTER_API_KEY")
+        self.model = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
         if not api_key:
-            raise ValueError("GEMINI_API_KEY is not set.")
-        self.client = genai.Client(api_key=api_key)
+            raise ValueError("OPENROUTER_API_KEY is not set.")
+        self.client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=api_key,
+        )
         
     def verify(self, answer: str, chunks: list[dict]) -> dict:
         context_parts = []
@@ -34,7 +37,7 @@ class CitationVerifier:
         
         prompt = f"""
 You are an expert citation verifier.
-Given an answer containing citations in the format [chunk_id], and the original context chunks provided below, verify if each cited chunk actually supports the claims made in the answer preceding the citation.
+Given an answer containing citations in the format [chunk_id], and the original context chunks provided below, verify if each cited chunk actually supports the claims made in the answer.
 
 Context chunks:
 {context}
@@ -42,17 +45,37 @@ Context chunks:
 Answer to verify:
 {answer}
 
-Please analyze each citation in the answer and determine if the corresponding context chunk supports the claim. Return the results as a JSON object matching the requested schema. Calculate the total_citations, supported_citations, and citation_support_rate correctly based on your analysis.
+Instructions:
+1. Identify all citations in the answer. They are formatted as [chunk_id].
+2. For each citation, find the corresponding chunk in the Context chunks.
+3. Determine if the information in the chunk supports the claim(s) made in the sentence containing the citation.
+4. If a citation's chunk_id is not found in the Context chunks, it is NOT supported.
+
+Return the results as a JSON object matching this structure:
+{{
+  "total_citations": 0,
+  "supported_citations": 0,
+  "citation_support_rate": 0.0,
+  "citations": [
+    {{
+      "chunk_id": "string",
+      "supported": true,
+      "reason": "string"
+    }}
+  ]
+}}
+Calculate the total_citations, supported_citations, and citation_support_rate accurately based on your analysis.
 """
         
-        response = self.client.models.generate_content(
+        response = self.client.chat.completions.create(
             model=self.model,
-            contents=prompt,
-            config={
-                "response_mime_type": "application/json",
-                "response_schema": CitationVerificationResult,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            response_format={
+                "type": "json_object"
             }
         )
         
-        result_dict = json.loads(response.text)
+        result_dict = json.loads(response.choices[0].message.content)
         return result_dict

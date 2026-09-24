@@ -1,3 +1,27 @@
+# Environments
+.env
+.venv
+venv/
+env/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Databases / Volumes
+qdrant_storage/
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary / Generated files
+scratch/
+*.log
 # =========================
 # Python
 # =========================
